@@ -186,9 +186,10 @@ div.attributes {
 
 .priority-lowest,
 .priority-low {
-    .priority {
-      @apply text-green-8;
-    }
+  td.priority,
+  .attribute.priority > .value {
+    @apply text-green-8;
+  }
 }
 
 .priority-high1,
@@ -196,14 +197,19 @@ div.attributes {
 .priority-high3,
 .priority-high4,
 .priority-high5 {
-  .priority {
+  td.priority,
+  .attribute.priority > .value {
     @apply text-red-8;
   }
 }
 
 .priority-highest {
-  .priority {
-    @apply bg-red-8 text-white rounded-md;
+  td.priority,
+  .attribute.priority > .value {
+    @apply bg-red-8 text-white rounded-md !px-2 text-center;
+    .iconEdit > svg {
+      @apply fill-white;
+    }
   }
 }
 

@@ -626,6 +626,10 @@ ul.cal {
   @apply text-base;
 }
 
+table.list.issues > tbody > tr.issue > td.selected {
+  @apply !shadow-[inset_0_0_0_2px_yellow];
+}
+
 @import "./login.css";
 @import "./sidebar.css";
 @import "./icons.css";

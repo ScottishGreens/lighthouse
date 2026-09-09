@@ -928,6 +928,10 @@ ul.cal {
   font-size: var(--text-base);
   line-height: var(--tw-leading, var(--text-base--line-height));
 }
+table.list.issues > tbody > tr.issue > td.selected {
+  --tw-shadow: inset 0 0 0 2px var(--tw-shadow-color, yellow) !important;
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+}
 body.action-login #header {
   display: none;
 }
@@ -1549,16 +1553,21 @@ div.description, div.attributes {
     padding: 0px !important;
   }
 }
-:is(.priority-lowest, .priority-low) .priority {
+:is(.priority-lowest, .priority-low) td.priority, :is(.priority-lowest, .priority-low)  .attribute.priority > .value {
   color: var(--color-green-8);
 }
-:is(.priority-high1, .priority-high2, .priority-high3, .priority-high4, .priority-high5) .priority {
+:is(.priority-high1, .priority-high2, .priority-high3, .priority-high4, .priority-high5) td.priority, :is(.priority-high1, .priority-high2, .priority-high3, .priority-high4, .priority-high5)  .attribute.priority > .value {
   color: var(--color-red-8);
 }
-.priority-highest .priority {
+.priority-highest td.priority, .priority-highest  .attribute.priority > .value {
   border-radius: var(--radius-md);
   background-color: var(--color-red-8);
+  padding-inline: calc(var(--spacing) * 2) !important;
+  text-align: center;
   color: var(--color-white);
+  .iconEdit > svg {
+    fill: var(--color-white);
+  }
 }
 .overdue .due-date.attribute {
   color: var(--color-red-8);
