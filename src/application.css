@@ -1,0 +1,614 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url("/assets/open-color-4385d5f4.css");
+
+@import "tailwindcss";
+
+@theme {
+
+  --breakpoint-lg: 900px;
+
+  --font-sans: "Noto Sans", sans-serif;
+  --default-font-family: var(--font-sans);
+
+  --color-primary: var(--color-blue-7);
+  --color-primary-light: var(--color-blue-5);
+  --color-primary-vlight: #eee;
+
+  --color-blue: var(--color-blue-5);
+
+  --color-cyan-vlight: #d9ece9;
+  --color-cyan-light: #20cfd8;
+  --color-cyan: #11aeb6;
+  --color-cyan-dark: #009299;
+
+  --color-surface: var(--color-page-tint);
+  --color-surface-low: var(--color-gray-vlight);
+  --color-border: var(--color-gray-3);
+
+  --color-white: var(--color-page-tint);
+
+  --color-text: var(--oc-gray-7);
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-primary-light);
+
+  --color-page-tint: #fefefe;
+  --color-page-tint-1: hsl(135, 29%, 97%);
+  --color-page-tint-2: hsl(277, 100%, 98.5%);
+  --color-page-tint-3: hsl(26, 94%, 98%);
+  --color-page-tint-4: hsl(214, 100%, 98%);
+  --color-page-tint-5: hsl(0, 82%, 97.5%);
+  --color-page-tint-6: hsl(0, 0%, 96.5%);
+
+  --color-gray-1: hsl(48 6% 95%);
+  --color-gray-2: hsl(48 6% 90%);
+  --color-gray-3: hsl(48 6% 85%);
+  --color-gray-4: hsl(48 6% 75%);
+  --color-gray-5: hsl(48 6% 65%);
+  --color-gray-6: hsl(48 6% 55%);
+  --color-gray-7: hsl(48 6% 45%);
+  --color-gray-8: hsl(48 6% 35%);
+  --color-gray-9: hsl(48 6% 25%);
+
+  --color-gray-vlight: var(--color-gray-1);
+  --color-gray-light: var(--color-gray-3);
+  --color-gray-medium: var(--color-gray-6);
+  --color-gray-dark: var(--color-gray-8);
+
+  --color-button-border: var(--color-gray-9);
+
+  --color-yellow-1: var(--oc-yellow-1);
+  --color-yellow-8: var(--oc-yellow-8);
+  --color-blue-1: #eaf6ff;
+  --color-blue-2: var(--oc-blue-2);
+  --color-blue-5: var(--oc-blue-5);
+  --color-blue-7: var(--oc-blue-7);
+  --color-orange-5: var(--oc-orange-5);
+  --color-orange-8: var(--oc-orange-8);
+  --color-red-1: var(--oc-red-1);
+  --color-red-5: var(--oc-red-5);
+  --color-red-8: var(--oc-red-8);
+  --color-green-1: var(--oc-green-1);
+  --color-green-8: var(--oc-green-8);
+
+  --color-mint-500: oklch(0.72 0.11 178);
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 17px;
+  --text-xl: 20px;
+  --text-2xl: 26px;
+  --text-3xl: 30px;
+  --my-line-height: 1.5;
+
+  --table-priority-shadow: inset 16px 0 red;
+
+  --component-base: calc(var(--spacing) * 2)
+  --field-row-size: calc(var(--spacing) * 10);
+
+}
+
+@utility menu {
+  @apply flex items-center flex-wrap gap-x-4 gap-y-0 text-blue-7 m-0;
+
+  li {
+    @apply my-1;
+  }
+  a.selected {
+    @apply underline;
+  }
+}
+
+@utility primary-link {
+  @apply font-normal text-link no-underline hover:underline hover:text-link-hover;
+}
+
+@utility wiki-link {
+  @apply font-normal text-link underline hover:text-link-hover;
+}
+
+@utility input {
+  @apply px-1.5 py-1 block-auto align-[initial] max-w-full bg-page-tint border-1 border-gray-4 rounded-sm text-gray-dark text-base font-normal;
+}
+
+@utility button {
+  @apply border-1 border-blue-7 rounded-md px-2 py-1 text-blue-7 m-0 me-1 text-base hover:underline hover:border-blue-5 hover:text-blue-5 cursor-pointer hover:shadow-[0_1px_2px_rgba(0,0,0,0.1)];
+}
+
+@utility box {
+  @apply my-2 p-4 bg-page-tint border-1 border-gray-3 rounded-lg;
+
+  table.list,
+  .box {
+    @apply border-0 p-0 mbe-4;
+
+    &:last-child {
+      @apply mbe-0;
+    }
+  }
+}
+
+@utility popbox {
+  @apply p-2 bg-page-tint text-gray-8 border-1 border-gray-3 rounded-lg shadow-["0_4px_6px_rgba(var(--oc-black-rgb),_0.1)"];
+}
+
+@utility flatbox {
+  @apply my-2 py-2 px-2 bg-blue-1 border-0 rounded-md;
+}
+
+@utility field {
+  @apply ps-45 mbe-1 min-h-8 ;
+  > label {
+    @apply float-start text-gray-8 inline-43 mbs-1 -ms-45 me-2;
+  }
+  input,select,
+  .icon, .icon-only {
+    @apply align-middle me-1;
+  }
+  label.block {
+    @apply block my-1 float-none;
+  }
+}
+
+@utility admin-field {
+  @apply ps-85 py-3 my-0 clear-both min-h-8 border-be-1 border-gray-1 overflow-hidden last:border-be-0 last:mbe-0;
+  > label {
+    @apply float-start inline-82 mbs-1 -ms-85 me-2;
+  }
+  label.block {
+    @apply block my-1 float-none mx-0 px-0 w-auto;
+  }
+}
+
+@utility inline-field {
+  @apply float-right ps-0;
+  label {
+    @apply m-0 ms-1 float-none size-auto align-middle;
+  }
+}
+
+body {
+  @apply bg-page-tint;
+}
+
+html, body, table, input {
+  @apply text-gray-8 text-base;
+}
+
+a {
+  @apply primary-link;
+}
+
+h1 {
+  @apply text-base font-bold;
+}
+
+h2 {
+  @apply text-base font-medium mbs-6 mbe-3;
+}
+
+h3 {
+  @apply text-base font-medium mbs-6 mbe-1;
+}
+
+ul {
+  @apply my-3;
+}
+
+ul > li {
+  @apply mbe-2;
+  &:last-child {
+    @apply mbe-0;
+  }
+}
+
+strong {
+  @apply font-bold;
+}
+
+small {
+    @apply text-sm inline-block;
+}
+
+hr {
+    @apply border-gray-3 my-4;
+}
+
+input[type="submit"], button[type="submit"], input[type="file"],
+select[multiple="multiple"],
+input, select, textarea, button {
+  @apply input;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  @apply mx-1 align-middle;
+}
+
+input.autocomplete {
+  background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='30.239px' height='30.239px' viewBox='0 0 30.239 30.239' style='enable-background:new 0 0 30.239 30.239;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M20.194,3.46c-4.613-4.613-12.121-4.613-16.734,0c-4.612,4.614-4.612,12.121,0,16.735 c4.108,4.107,10.506,4.547,15.116,1.34c0.097,0.459,0.319,0.897,0.676,1.254l6.718,6.718c0.979,0.977,2.561,0.977,3.535,0 c0.978-0.978,0.978-2.56,0-3.535l-6.718-6.72c-0.355-0.354-0.794-0.577-1.253-0.674C24.743,13.967,24.303,7.57,20.194,3.46z M18.073,18.074c-3.444,3.444-9.049,3.444-12.492,0c-3.442-3.444-3.442-9.048,0-12.492c3.443-3.443,9.048-3.443,12.492,0 C21.517,9.026,21.517,14.63,18.073,18.074z'/%3E%3C/g%3E%3C/svg%3E%0A");
+  @apply pe-8 bg-no-repeat bg-size-[16px] bg-position-[right_9px_center];
+}
+
+textarea {
+  @apply block w-full mbe-2;
+}
+
+input[type="submit"], button[type="submit"] {
+  @apply button;
+}
+
+label.inline {
+  @apply inline-block mbe-2;
+
+  input {
+    @apply mx-1;
+  }
+}
+
+label.block {
+  @apply inline-block mbe-1;
+}
+
+#top-menu {
+  --color-text: var(--color-white);
+  --color-link: var(--color-white);
+  --color-link-hover: var(--color-white);
+  --color-border: transparent;
+  --color-surface: var(--color-blue-7);
+  @apply flex border-be-1 bg-surface border-border text-text gap-2 items-center py-1 px-10 xl:px-30;
+
+  #project-jump .drdn-trigger,
+  input {
+      @apply border-border;
+  }
+
+  ul {
+    @apply menu;
+  }
+
+  #logo {
+    @apply hidden;
+  }
+
+  #account {
+    li {
+      @apply m-0 w-full;
+    }
+    .user-info {
+      @apply py-2 px-3;
+    }
+    .user-login {
+      @apply text-gray-6;
+    }
+  }
+
+  #quick-search {
+    @apply flex gap-1;
+  }
+
+  .profile-menu {
+    --color-text: var(--color-gray-9);
+    --color-link: var(--color-primary);
+    @apply text-text;
+  }
+
+}
+
+#header {
+  @apply flex gap-4 mbs-12 mbe-6 items-center;
+  h1 {
+    @apply my-1;
+  }
+}
+
+.breadcrumbs {
+  @apply hidden;
+}
+
+.general-menu {
+  @apply flex gap-3 items-center grow-1;
+
+  &:before {
+    content: "Lighthouse";
+    @apply me-2 font-bold my-1;
+  }
+
+}
+
+
+#header,
+#main,
+#footer {
+  @apply mx-14 xl:mx-30;
+}
+
+#main {
+  @apply flex flex-row-reverse gap-10;
+}
+
+#content {
+  @apply grow-3 pbe-10 w-fit min-w-0;
+}
+
+#content > h2 {
+  @apply inline-block;
+}
+
+#content > .contextual {
+  @apply mbs-6 mbe-3;
+}
+
+#content > .badge {
+  @apply inline-block mx-1;
+}
+
+
+p.buttons,
+div.buttons {
+  @apply flex gap-2 items-center;
+}
+
+.box {
+  @apply box;
+
+  h3:first-child {
+    @apply my-1;
+  }
+}
+
+.tabs ul {
+  @apply menu;
+
+  ul.menu-children {
+    @apply hidden absolute p-2 rounded-sm border-1 border-gray-6 bg-white z-45;
+
+  	li {
+      @apply float-none m-0;
+
+  		a {
+  			@apply block px-2 py-1 text-base rounded-lg mx-0.5;
+
+  			&:hover {
+  				@apply shadow-none bg-gray-1;
+  			}
+  		}
+  	}
+  }
+
+  li:hover ul.menu-children {
+    @apply block;
+  }
+
+}
+
+.tab-content {
+  @apply py-2;
+}
+
+.tabs-buttons {
+  @apply !hidden;
+}
+
+fieldset {
+  @apply mbs-0 mbe-2;
+
+  legend {
+    @apply text-gray-6 my-1 uppercase font-medium;
+    svg.icon-svg {
+      @apply stroke-gray-6;
+    }
+  }
+
+  &.collapsible > div {
+    @apply ps-5 pbe-2;
+  }
+}
+
+#list-definition {
+
+  > div {
+   @apply my-3 flex gap-2;
+  }
+
+  .buttons {
+    @apply flex-col;
+  }
+
+}
+
+
+.mypage-box {
+
+  h3 {
+    @apply mbs-0 mbe-2;
+  }
+
+}
+
+
+.autoscroll {
+  @apply box overflow-x-auto;
+}
+
+div.flash.notice {
+  @apply flex items-center gap-2 p-2 bg-green-1 border-1 border-green-8 text-green-8 rounded-md;
+
+  svg.icon-svg {
+    @apply stroke-green-8;
+  }
+}
+
+.autoscroll {
+  @apply box overflow-x-auto;
+  > table.list {
+    @apply p-0 m-0 border-0 border-collapse;
+  }
+}
+
+
+ul.pages {
+  @apply menu float-right;
+}
+
+.contextual {
+  @apply float-right flex gap-2 ms-2;
+}
+
+
+
+.avatar-with-child {
+  @apply float-left me-2;
+}
+
+#footer {
+  @apply pbe-8 text-gray-6;
+
+  a {
+      @apply text-gray-6;
+  }
+
+}
+
+
+.splitcontent {
+  @apply grid grid-cols-2 gap-6 w-full;
+}
+
+#list-top {
+  @apply col-span-full;
+}
+
+.tabular {
+
+  p {
+    @apply field;
+  }
+
+
+  em {
+    @apply block text-gray-6;
+  }
+
+}
+
+/*
+.tabular {
+  p {
+    @apply grid grid-cols-[1fr_2fr] justify-start items-center;
+
+    > * {
+      @apply col-2 min-h-min justify-self-start;
+    }
+
+    > label {
+      @apply col-1;
+    }
+
+    em {
+      @apply inline-block text-gray-6;
+    }
+  }
+}
+*/
+div#content .jstTabs.tabs {
+
+  li {
+    @apply block-auto;
+  }
+
+}
+
+/* CALENDAR */
+
+ul.cal {
+  @apply !border-gray-3;
+
+  li {
+    @apply p-2 m-0 !border-gray-3;
+  }
+
+  .starting a.issue {
+    @apply p-0 bg-transparent;
+  }
+
+  .week-number,
+  .calhead,
+  .calbody {
+    @apply bg-transparent !p-2 m-0 font-normal;
+  }
+
+  .calbody,
+  .calbody a {
+    @applt text-sm;
+  }
+
+  .issue {
+    @apply mbe-2 bg-[#e1e1e170] p-1 rounded-md;
+
+      svg {
+        @apply hidden;
+      }
+  }
+
+}
+
+.legend.cal {
+  @apply my-3;
+
+  > span {
+   @apply flex gap-2;
+ }
+
+}
+
+.inline-flex {
+  @apply inline-flex gap-1;
+}
+
+.badge {
+  @apply bg-gray-2 border-0 rounded-md py-0.5 px-1 text-sm uppercase;
+}
+
+.badge-status-open {
+  @apply bg-blue-1;
+}
+
+.badge-private {
+  @apply bg-red-1;
+}
+
+.required {
+  @apply text-[#f0a0a0];
+}
+
+.context-menu-selection a {
+  @apply text-white;
+}
+
+/* UX */
+
+#content #query_form_open_button {
+  @apply text-base;
+}
+
+@import "./login.css";
+@import "./sidebar.css";
+@import "./icons.css";
+@import "./dropdown.css";
+@import "./avatars.css";
+@import "./admin.css";
+@import "./filter.css";
+@import "./issues.css";
+@import "./activity.css";
+@import "./contact.css";
+@import "./wiki.css";
+@import "./mypage.css";
+@import "./roadmap.css";
+@import "./tooltip.css";
+@import "./table.css";
+@import "./gantt.css";
+@import "./projects.css";
+@import "./agile.css";
+@import "./jqueryui.css";

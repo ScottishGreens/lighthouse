@@ -1,0 +1,50 @@
+
+#wrapper {
+
+  table.excerpt.index {
+    @apply border-0;
+  }
+
+  form.new_issue .email-template {
+    @apply flatbox overflow-hidden;
+  }
+
+  div.contact {
+    @apply flatbox;
+
+    .job_title {
+      @apply hidden;
+    }
+
+    .subject_header {
+      @apply items-center grow-1;
+
+      .name .header {
+        @apply primary-link;
+      }
+
+    }
+
+    .icon .s18.icon-svg {
+      @apply me-1;
+    }
+
+    .avatar.s32 {
+      @apply w-4 h-4;
+    }
+
+    p {
+      @apply my-0;
+    }
+
+    .contact-details,
+    .name {
+      @apply ps-0 grow-1;
+    }
+
+    .icon-email {
+      @apply flex;
+    }
+
+  }
+}

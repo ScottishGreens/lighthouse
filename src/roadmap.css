@@ -1,0 +1,20 @@
+#roadmap {
+  h3 {
+    &, a {
+      @apply text-xl my-1;
+    }
+  }
+}
+
+.version-article {
+  @apply box;
+  .version-overview {
+    @apply flex gap-3;
+    > p:first-child {
+      @apply grow-1;
+    }
+    table.progress {
+      @apply me-0;
+    }
+  }
+}

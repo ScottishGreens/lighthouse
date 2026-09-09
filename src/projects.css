@@ -1,0 +1,41 @@
+
+body.controller-projects.action-show #content > .splitcontent > div {
+
+  > .wiki,
+  > ul {
+    @apply box;
+  }
+
+}
+.dashboard.splitcontent {
+    > .splitcontentright,
+    > .splitcontentleft {
+      @apply w-auto;
+    }
+}
+
+#projects-index {
+  @apply py-1 px-6;
+}
+
+
+ul.projects.root {
+  @apply my-6 columns-2 xl:columns-3 gap-4;
+
+  div.description {
+    @apply hidden;
+  }
+
+  ul.projects {
+    @apply border-s-1 border-gray-3 ps-4 ms-4;
+  }
+
+}
+
+.icon-bookmarked-project svg {
+  @apply stroke-gray-6;
+}
+
+.icon-user.my-project svg {
+  @apply stroke-gray-6;
+}

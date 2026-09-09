@@ -1,0 +1,16 @@
+
+#sidebar #sidebar-wrapper {
+  @apply w-80 grow-0;
+  p,
+  ul li {
+    @apply mbe-2;
+  }
+}
+
+div.nosidebar #sidebar {
+  @apply w-0;
+}
+
+#sidebar-switch-panel {
+  @apply hidden;
+}
