@@ -1449,16 +1449,15 @@ body.controller-issues.action-show div.dynamicEditField {
     color: var(--color-gray-6);
   }
 }
-.journal-header {
-  margin-block-end: var(--spacing);
-  color: var(--color-gray-6);
-  a {
-    color: var(--color-gray-6);
-  }
-}
 .journal {
   margin-block: calc(var(--spacing) * 4);
-  &.has-details {
+  .journal-info {
+    color: var(--color-gray-6);
+    a {
+      color: var(--color-gray-6);
+    }
+  }
+  &.has-details:not(.has-notes) {
     margin-inline-start: calc(var(--spacing) * 4);
     border-inline-start-style: var(--tw-border-style);
     border-inline-start-width: 1px;
@@ -1475,22 +1474,28 @@ body.controller-issues.action-show div.dynamicEditField {
     border-width: 1px;
     border-color: var(--color-gray-3);
     padding: calc(var(--spacing) * 5);
+    .journal-header {
+      margin-block-end: calc(var(--spacing) * 2);
+    }
     .avatar {
       vertical-align: top;
     }
   }
   ul.journal-details {
     margin: 0px;
-    > li {
-      margin-block: 0px;
+    margin-block-end: var(--spacing);
+    > .wiki {
+      margin-block-start: calc(var(--spacing) * 2);
     }
   }
   .journal-meta {
     float: right;
     display: none;
   }
-  &:hover .journal-meta {
-    display: block;
+  &:hover .journal-meta, .reaction-button-wrapper, .journal-actions {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
   }
 }
 div.description, div.attributes {
@@ -1828,6 +1833,9 @@ div.wiki h3 {
 div.wiki p {
   margin-block-start: 0px;
   margin-block-end: calc(var(--spacing) * 3);
+  &:last-child {
+    margin-block-end: 0px;
+  }
 }
 div.wiki a {
   --tw-font-weight: var(--font-weight-normal);

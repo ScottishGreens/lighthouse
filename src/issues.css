@@ -77,17 +77,18 @@ body.controller-issues.action-show {
   }
 }
 
-.journal-header {
-  @apply text-gray-6 mbe-1;
-  a {
-    @apply text-gray-6;
-  }
-}
 
 .journal {
   @apply my-4;
 
-  &.has-details {
+  .journal-info {
+    @apply text-gray-6;
+    a {
+      @apply text-gray-6;
+    }
+  }
+
+  &.has-details:not(.has-notes) {
     @apply border-s-1 border-gray-3 ps-4 ms-4;
 
       .avatar {
@@ -100,6 +101,10 @@ body.controller-issues.action-show {
   &.has-notes {
     @apply clear-both border-1 border-gray-3 rounded-lg p-5;
 
+    .journal-header {
+      @apply mbe-2;
+    }
+
     .avatar {
       @apply align-top;
     }
@@ -107,10 +112,10 @@ body.controller-issues.action-show {
   }
 
   ul.journal-details {
-    @apply m-0;
+    @apply m-0 mbe-1;
 
-    > li {
-      @apply my-0;
+    > .wiki {
+      @apply mbs-2;
     }
   }
 
@@ -118,8 +123,10 @@ body.controller-issues.action-show {
     @apply hidden float-right;
   }
 
-  &:hover .journal-meta {
-    @apply block;
+  &:hover .journal-meta,
+  .reaction-button-wrapper,
+  .journal-actions {
+    @apply flex gap-2 items-center;
   }
 
 }

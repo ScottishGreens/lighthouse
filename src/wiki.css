@@ -69,6 +69,9 @@ div.wiki {
 
   p {
     @apply mbs-0 mbe-3;
+    &:last-child {
+      @apply mbe-0;
+    }
   }
 
   a {
