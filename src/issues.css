@@ -27,8 +27,11 @@ body.controller-issues.action-show {
   }
 
   div.dynamicEditField {
-    @apply bottom-auto top-6 -left-3 p-2;
+    @apply hidden bottom-auto top-6 -left-3 p-2 m-0;
 
+    &.open {
+      @apply block;
+    }
     button.action {
       @apply bg-transparent align-middle;
     }
@@ -163,6 +166,9 @@ div.attributes {
 
   .label {
     @apply inline-block font-bold me-2 !p-0;
+    > a {
+      @apply font-bold;
+    }
   }
 
   .value {

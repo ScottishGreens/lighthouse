@@ -444,9 +444,13 @@ label.block {
 #header {
   margin-block-start: calc(var(--spacing) * 12);
   margin-block-end: calc(var(--spacing) * 6);
-  display: flex;
   align-items: center;
-  gap: calc(var(--spacing) * 4);
+  @media (width >= 900px) {
+    display: flex;
+  }
+  @media (width >= 900px) {
+    gap: calc(var(--spacing) * 4);
+  }
   h1 {
     margin-block: var(--spacing);
   }
@@ -467,11 +471,17 @@ label.block {
     font-weight: var(--font-weight-bold);
   }
 }
-#header,
+@media (width >= 900px) {
+  #header,
 #main,
 #footer {
-  margin-inline: calc(var(--spacing) * 14);
-  @media (width >= 80rem) {
+    margin-inline: calc(var(--spacing) * 14);
+  }
+}
+@media (width >= 80rem) {
+  #header,
+#main,
+#footer {
     margin-inline: calc(var(--spacing) * 30);
   }
 }
@@ -480,22 +490,61 @@ label.block {
   flex-direction: row-reverse;
   gap: calc(var(--spacing) * 10);
 }
-#content {
+#wrapper #content {
   width: fit-content;
   min-width: 0px;
   flex-grow: 3;
   padding-block-end: calc(var(--spacing) * 10);
-}
-#content > h2 {
-  display: inline-block;
-}
-#content > .contextual {
-  margin-block-start: calc(var(--spacing) * 6);
-  margin-block-end: calc(var(--spacing) * 3);
-}
-#content > .badge {
-  margin-inline: var(--spacing);
-  display: inline-block;
+  > h2 {
+    display: inline-block;
+  }
+  > .contextual {
+    margin-block-start: calc(var(--spacing) * 6);
+    margin-block-end: calc(var(--spacing) * 3);
+    > span.drdn,
+    > a {
+      margin: 0px;
+      margin-inline-end: var(--spacing);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      border-style: var(--tw-border-style);
+      border-width: 1px;
+      border-color: var(--color-blue-7);
+      padding-inline: calc(var(--spacing) * 2);
+      padding-block: var(--spacing);
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+      color: var(--color-blue-7);
+      &:hover {
+        @media (hover: hover) {
+          border-color: var(--color-blue-5);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-blue-5);
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          text-decoration-line: underline;
+        }
+      }
+      &:hover {
+        @media (hover: hover) {
+          --tw-shadow: 0 1px 2px var(--tw-shadow-color, rgba(0,0,0,0.1));
+          box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+        }
+      }
+      margin-inline-end: 0px;
+      padding-inline: calc(var(--spacing) * 1.5);
+      padding-block: calc(var(--spacing) * 2);
+    }
+  }
+  > .badge {
+    margin-inline: var(--spacing);
+    display: inline-block;
+  }
 }
 p.buttons,
 div.buttons {
@@ -704,10 +753,16 @@ ul.pages {
   }
 }
 .splitcontent {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: calc(var(--spacing) * 6);
+  @media (width >= 900px) {
+    display: grid;
+  }
+  @media (width >= 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (width >= 900px) {
+    gap: calc(var(--spacing) * 6);
+  }
 }
 #list-top {
   grid-column: 1 / -1;
@@ -805,6 +860,50 @@ ul.cal {
 }
 .context-menu-selection a {
   color: var(--color-white);
+}
+#wrapper #header {
+  background-color: var(--color-blue-7);
+  @media (width >= 900px) {
+    background-color: transparent;
+  }
+}
+#wrapper .flyout-menu {
+  background-color: var(--color-primary);
+  padding-inline: calc(var(--spacing) * 4);
+  h3 {
+    margin-inline: 0px;
+    margin-block-start: calc(var(--spacing) * 4);
+    margin-block-end: var(--spacing);
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+    background-color: transparent;
+    padding: 0px;
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .search-magnifier--flyout {
+    top: calc(var(--spacing) * 5);
+    right: calc(var(--spacing) * 7);
+    left: auto;
+  }
+  .flyout-menu__search,
+  #sidebar-wrapper {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  ul > li {
+    margin: 0px;
+    padding-block: var(--spacing);
+    a {
+      margin: 0px;
+      border-style: var(--tw-border-style);
+      border-width: 0px;
+      padding: 0px;
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+      block-size: auto;
+    }
+  }
 }
 #content #query_form_open_button {
   font-size: var(--text-base);
@@ -926,7 +1025,10 @@ span.icon-checked:has(:not(a svg.icon-svg)) svg.icon-svg {
 .drdn-content {
   display: none;
   position: absolute;
-  inset-inline-end: 0px;
+  right: 0;
+  left: auto;
+  inset-inline-start: 0 !important;
+  inset-inline-end: 0 !important;
   inset-block-start: 25px;
   min-inline-size: 100px;
   box-shadow: 0 4px 6px rgba(var(--oc-black-rgb), 0.1);
@@ -1266,7 +1368,12 @@ body.controller-issues.action-show div.dynamicEditField {
   top: calc(var(--spacing) * 6);
   bottom: auto;
   left: calc(var(--spacing) * -3);
+  margin: 0px;
+  display: none;
   padding: calc(var(--spacing) * 2);
+  &.open {
+    display: block;
+  }
   button.action {
     background-color: transparent;
     vertical-align: middle;
@@ -1407,6 +1514,10 @@ div.description, div.attributes {
     padding: 0px !important;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    > a {
+      --tw-font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-bold);
+    }
   }
   .value {
     margin-inline-end: calc(var(--spacing) * 2);

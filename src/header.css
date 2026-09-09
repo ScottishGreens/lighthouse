@@ -1,4 +1,9 @@
 
+#header {
+  @apply bg-blue-7 lg:bg-transparent;
+}
+
+
 #top-menu {
   @apply app-width bg-transparent text-gray-8 px-6 py-3;
 
@@ -15,7 +20,6 @@
   }
 
 }
-
 
 #header {
   @apply app-width bg-transparent text-gray-8 w-full py-1 py-3;

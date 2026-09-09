@@ -297,7 +297,7 @@ label.block {
 }
 
 #header {
-  @apply flex gap-4 mbs-12 mbe-6 items-center;
+  @apply lg:flex lg:gap-4 mbs-12 mbe-6 items-center;
   h1 {
     @apply my-1;
   }
@@ -321,29 +321,33 @@ label.block {
 #header,
 #main,
 #footer {
-  @apply mx-14 xl:mx-30;
+  @apply lg:mx-14 xl:mx-30;
 }
 
 #main {
   @apply flex flex-row-reverse gap-10;
 }
 
-#content {
+#wrapper #content {
   @apply grow-3 pbe-10 w-fit min-w-0;
-}
 
-#content > h2 {
-  @apply inline-block;
-}
+  > h2 {
+    @apply inline-block;
+  }
 
-#content > .contextual {
-  @apply mbs-6 mbe-3;
-}
+  > .contextual {
+    @apply mbs-6 mbe-3;
+    > span.drdn,
+    > a {
+      @apply py-2 px-1.5 button me-0;
+    }
+  }
 
-#content > .badge {
-  @apply inline-block mx-1;
-}
+  > .badge {
+    @apply inline-block mx-1;
+  }
 
+}
 
 p.buttons,
 div.buttons {
@@ -473,7 +477,7 @@ ul.pages {
 
 
 .splitcontent {
-  @apply grid grid-cols-2 gap-6 w-full;
+  @apply lg:grid lg:grid-cols-2 lg:gap-6 w-full;
 }
 
 #list-top {
@@ -586,6 +590,35 @@ ul.cal {
 .context-menu-selection a {
   @apply text-white;
 }
+
+#wrapper #header {
+  @apply bg-blue-7 lg:bg-transparent;
+}
+
+#wrapper .flyout-menu {
+  @apply bg-primary px-4;
+
+  h3 {
+    @apply text-base bg-transparent border-0 mx-0 p-0 mbs-4 mbe-1;
+  }
+
+  .search-magnifier--flyout {
+    @apply top-5 right-7 left-auto;
+  }
+
+  .flyout-menu__search,
+  #sidebar-wrapper {
+    @apply !m-0 !p-0;
+  }
+
+  ul > li {
+    @apply m-0 py-1;
+    a {
+      @apply text-base m-0 p-0 block-auto border-0;
+    }
+  }
+}
+
 
 /* UX */
 

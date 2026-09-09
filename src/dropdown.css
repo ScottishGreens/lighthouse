@@ -14,7 +14,10 @@
 .drdn-content {
   display:none;
   position:absolute;
-  inset-inline-end:0px;
+  right:0;
+  left:auto;
+  inset-inline-start:0 !important;
+  inset-inline-end:0 !important;
   inset-block-start:25px;
   min-inline-size:100px;
   box-shadow: 0 4px 6px rgba(var(--oc-black-rgb), 0.1);
