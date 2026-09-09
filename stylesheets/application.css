@@ -539,6 +539,24 @@ label.block {
       margin-inline-end: 0px;
       padding-inline: calc(var(--spacing) * 1.5);
       padding-block: calc(var(--spacing) * 2);
+      @media (width >= 900px) {
+        margin: 0px;
+      }
+      @media (width >= 900px) {
+        border-style: var(--tw-border-style);
+        border-width: 0px;
+      }
+      @media (width >= 900px) {
+        padding: 0px;
+      }
+      @media (width >= 900px) {
+        &:hover {
+          @media (hover: hover) {
+            --tw-shadow: 0 0 #0000;
+            box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+          }
+        }
+      }
     }
   }
   > .badge {
@@ -739,7 +757,8 @@ ul.pages {
   float: right;
   margin-inline-start: calc(var(--spacing) * 2);
   display: flex;
-  gap: calc(var(--spacing) * 2);
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 3);
 }
 .avatar-with-child {
   float: left;

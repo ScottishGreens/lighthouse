@@ -339,7 +339,7 @@ label.block {
     @apply mbs-6 mbe-3;
     > span.drdn,
     > a {
-      @apply py-2 px-1.5 button me-0;
+      @apply py-2 px-1.5 button me-0 lg:p-0 lg:m-0 lg:border-0 lg:hover:shadow-none;
     }
   }
 
@@ -457,7 +457,7 @@ ul.pages {
 }
 
 .contextual {
-  @apply float-right flex gap-2 ms-2;
+  @apply float-right flex flex-wrap gap-3 ms-2;
 }
 
 
