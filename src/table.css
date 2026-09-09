@@ -9,7 +9,7 @@ table.list {
   @apply box min-w-full border-separate;
 
   td,th {
-    @apply pe-3 ps-1 py-1 border-be-1 border-gray-3 text-left font-normal align-top;
+    @apply pe-2 ps-2 py-1 border-be-1 border-gray-3 text-left font-normal align-top;
     &:first-child {
       @apply ps-0;
     }
@@ -55,6 +55,11 @@ table.list {
   th.id,
   td.id {
     @apply hidden;
+  }
+
+  .status,
+  .priority {
+    @apply text-center;
   }
 
   td.buttons {

@@ -1549,8 +1549,16 @@ div.description, div.attributes {
     padding: 0px !important;
   }
 }
-:is(.priority-high3, .priority-high4, .priority-high5) .priority {
+:is(.priority-lowest, .priority-low) .priority {
+  color: var(--color-green-8);
+}
+:is(.priority-high1, .priority-high2, .priority-high3, .priority-high4, .priority-high5) .priority {
   color: var(--color-red-8);
+}
+.priority-highest .priority {
+  border-radius: var(--radius-md);
+  background-color: var(--color-red-8);
+  color: var(--color-white);
 }
 .overdue .due-date.attribute {
   color: var(--color-red-8);
@@ -2025,8 +2033,8 @@ table.list {
     border-block-end-width: 1px;
     border-color: var(--color-gray-3);
     padding-block: var(--spacing);
-    padding-inline-start: var(--spacing);
-    padding-inline-end: calc(var(--spacing) * 3);
+    padding-inline-start: calc(var(--spacing) * 2);
+    padding-inline-end: calc(var(--spacing) * 2);
     text-align: left;
     vertical-align: top;
     --tw-font-weight: var(--font-weight-normal);
@@ -2066,6 +2074,9 @@ table.list {
   }
   th.id, td.id {
     display: none;
+  }
+  .status, .priority {
+    text-align: center;
   }
   td.buttons {
     text-align: right;
