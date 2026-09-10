@@ -1,0 +1,7 @@
+div#checklist {
+  ul#checklist_items {
+    li {
+      @apply py-0;
+    }
+  }
+}

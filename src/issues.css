@@ -236,6 +236,9 @@ div.attributes {
     @apply me-2 inline-block;
 }
 
+.assignable-user {
+  @apply block mbe-1;
+}
 
 table.progress {
   @apply rounded-full overflow-hidden border-1 border-gray-3 border-spacing-0 border-separate me-2 min-w-30;
@@ -267,12 +270,35 @@ form#issue-form {
   @apply box;
 }
 
+/*
 #update {
-
   div.attributes {
     @apply border-y-1 border-gray-3 my-4 py-4;
   }
+}
+*/
 
+#update {
+  @apply mbe-6;
+}
+
+.notes_with-send {
+  @apply pbe-4 px-4 rounded-md;
+ .helpdesk-ticket-to {
+    @apply flex gap-3 items-center;
+ }
+}
+
+.email-header,
+.email-footer {
+  @apply text-center italic;
+}
+
+#issue_description_wiki {
+  @apply ps-0;
+  p {
+    @apply ps-0 inline-auto;
+  }
 }
 
 .icon-edit span {

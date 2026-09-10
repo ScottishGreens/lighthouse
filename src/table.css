@@ -9,7 +9,7 @@ table.list {
   @apply box min-w-full border-separate;
 
   td,th {
-    @apply pe-2 ps-2 py-1 border-be-1 border-gray-3 text-left font-normal align-top;
+    @apply pe-2 ps-2 py-1 border-be-1 border-gray-1 text-left font-normal align-top;
     &:first-child {
       @apply ps-0;
     }

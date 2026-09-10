@@ -47,4 +47,10 @@
     }
 
   }
+
+  .icon-helpdesk-reply {
+    @apply hidden;
+  }
+
+
 }

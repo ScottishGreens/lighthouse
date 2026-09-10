@@ -22,3 +22,21 @@
     @apply mbe-3 border-be-1 border-gray-3 pbe-3 overflow-hidden last:border-be-0 last:mbe-0;
   }
 }*/
+
+
+div.ui-widget-overlay {
+  @apply bg-surface opacity-60;
+}
+
+.objects-selection {
+  @apply block-70 overflow-auto;
+}
+
+/* Members */
+
+#principals {
+  @apply columns-md my-4;
+  label {
+    @apply flex gap-2 items-center mbe-1;
+  }
+}

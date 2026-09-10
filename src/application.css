@@ -110,6 +110,9 @@
 
 @utility input {
   @apply px-1.5 py-1 block-auto align-[initial] max-w-full bg-page-tint border-1 border-gray-4 rounded-sm text-gray-dark text-base font-normal;
+  &::placeholder {
+    @apply text-base;
+  }
 }
 
 @utility button {
@@ -117,7 +120,7 @@
 }
 
 @utility box {
-  @apply my-2 p-4 bg-page-tint border-1 border-gray-3 rounded-lg;
+  @apply my-4 p-4 bg-page-tint border-1 border-gray-3 rounded-lg;
 
   table.list,
   .box {
@@ -388,7 +391,7 @@ div.buttons {
 }
 
 .tab-content {
-  @apply py-2;
+  @apply py-4;
 }
 
 .tabs-buttons {
@@ -523,11 +526,25 @@ div#content .jstTabs.tabs {
   }
 
 }
+#wrapper {
+
+  div.tooltip span.tip {
+    @apply p-3;
+  }
+
+  .context-menu-selection .tip a {
+    @apply !text-link;
+  }
+}
 
 /* CALENDAR */
 
 ul.cal {
   @apply !border-gray-3;
+
+  a {
+    @apply !p-0;
+  }
 
   li {
     @apply p-2 m-0 !border-gray-3;
@@ -548,14 +565,33 @@ ul.cal {
     @applt text-sm;
   }
 
-  .issue {
+
+  div.issue {
     @apply mbe-2 bg-[#e1e1e170] p-1 rounded-md;
 
-      svg {
-        @apply hidden;
-      }
+    svg {
+      @apply inline-block;
+    }
   }
 
+}
+
+.starting {
+  svg.icon-svg {
+    @apply stroke-green-8;
+  }
+}
+
+.ending {
+  svg.icon-svg {
+    @apply stroke-red-8;
+  }
+}
+
+.starting.ending {
+  svg.icon-svg {
+    @apply stroke-blue-7;
+  }
 }
 
 .legend.cal {
@@ -619,6 +655,22 @@ ul.cal {
   }
 }
 
+/* ATTACHMENTS */
+
+.filecontent {
+  @apply my-2;
+}
+
+.icon-only > .icon-label {
+  @apply hidden;
+}
+
+#attachments table {
+  @apply mbe-2;
+  td {
+    @apply px-2 py-1;
+  }
+}
 
 /* UX */
 
@@ -644,6 +696,7 @@ table.list.issues > tbody > tr.issue > td.selected {
 @import "./mypage.css";
 @import "./roadmap.css";
 @import "./tooltip.css";
+@import "./checklist.css";
 @import "./table.css";
 @import "./gantt.css";
 @import "./projects.css";

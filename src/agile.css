@@ -13,7 +13,12 @@ body.controller-agile_boards.action-index {
 
 
 .agile-board table.issues-board {
-  @apply border-0;
+  @apply border-0 border-collapse;
+
+  .issue-status-col.empty {
+    @apply pbe-70;
+  }
+
   .issue-card {
     @apply flatbox w-60 whitespace-normal;
     .user {

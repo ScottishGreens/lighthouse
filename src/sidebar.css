@@ -3,7 +3,7 @@
   @apply w-80 grow-0;
   p,
   ul li {
-    @apply mbe-2;
+    @apply mbe-1;
   }
 }
 
