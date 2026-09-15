@@ -188,7 +188,7 @@ div.attributes {
 .priority-low {
   td.priority,
   .attribute.priority > .value {
-    @apply text-green-8;
+    @apply text-green-8 font-light;
   }
 }
 
@@ -206,10 +206,7 @@ div.attributes {
 .priority-highest {
   td.priority,
   .attribute.priority > .value {
-    @apply bg-red-8 text-white rounded-md !px-2 text-center;
-    .iconEdit > svg {
-      @apply fill-white;
-    }
+    @apply text-red-8 font-medium;
   }
 }
 

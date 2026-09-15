@@ -24,6 +24,7 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 30px;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
@@ -382,6 +383,10 @@ label.block {
   margin-block-end: var(--spacing);
   display: inline-block;
 }
+label.floating {
+  margin-block-end: var(--spacing);
+  display: block;
+}
 #top-menu {
   --color-text: var(--color-white);
   --color-link: var(--color-white);
@@ -663,6 +668,9 @@ fieldset {
       stroke: var(--color-gray-6);
     }
   }
+  legend + .contextual {
+    margin-block-start: calc(var(--spacing) * -3);
+  }
   &.collapsible > div {
     padding-inline-start: calc(var(--spacing) * 5);
     padding-block-end: calc(var(--spacing) * 2);
@@ -810,6 +818,7 @@ ul.pages {
   }
   label.block {
     float: none;
+    margin-inline: 0px;
     margin-block: var(--spacing);
     display: block;
   }
@@ -1332,7 +1341,7 @@ span[role="img"].avatar.s50 {
   columns: 3;
   gap: calc(var(--spacing) * 4);
 }
-.tabular.settings > p, .tabular.settings > .tab-content > fieldset > p {
+body.action-settings .tabular > p, .tabular.settings > p, .tabular.settings > .tab-content > p, .tabular.settings > .tab-content > fieldset > p {
   clear: both;
   margin-block: 0px;
   min-height: calc(var(--spacing) * 8);
@@ -1354,7 +1363,7 @@ span[role="img"].avatar.s50 {
     margin-inline-start: calc(var(--spacing) * -85);
     margin-inline-end: calc(var(--spacing) * 2);
     margin-block-start: var(--spacing);
-    inline-size: calc(var(--spacing) * 82);
+    inline-size: auto;
   }
   label.block {
     float: none;
@@ -1431,6 +1440,7 @@ div.ui-widget-overlay {
 }
 #filters-table {
   display: flex;
+  flex-wrap: wrap;
   gap: calc(var(--spacing) * 2);
 }
 #sticky-issue-header {
@@ -1612,20 +1622,17 @@ div.description, div.attributes {
   }
 }
 :is(.priority-lowest, .priority-low) td.priority, :is(.priority-lowest, .priority-low)  .attribute.priority > .value {
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
   color: var(--color-green-8);
 }
 :is(.priority-high1, .priority-high2, .priority-high3, .priority-high4, .priority-high5) td.priority, :is(.priority-high1, .priority-high2, .priority-high3, .priority-high4, .priority-high5)  .attribute.priority > .value {
   color: var(--color-red-8);
 }
 .priority-highest td.priority, .priority-highest  .attribute.priority > .value {
-  border-radius: var(--radius-md);
-  background-color: var(--color-red-8);
-  padding-inline: calc(var(--spacing) * 2) !important;
-  text-align: center;
-  color: var(--color-white);
-  .iconEdit > svg {
-    fill: var(--color-white);
-  }
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-red-8);
 }
 .overdue .due-date.attribute {
   color: var(--color-red-8);
@@ -1935,6 +1942,9 @@ div.wiki p {
   &:last-child {
     margin-block-end: 0px;
   }
+  &:empty {
+    display: none;
+  }
 }
 div.wiki a {
   --tw-font-weight: var(--font-weight-normal);
@@ -2001,6 +2011,10 @@ div.wiki ul li {
       margin-block-end: 0px;
     }
   }
+}
+.dragging > .block-receiver {
+  min-height: calc(var(--spacing) * 10);
+  background-color: var(--color-yellow-1);
 }
 :is(#roadmap h3), #roadmap h3  a {
   margin-block: var(--spacing);

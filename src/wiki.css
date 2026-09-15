@@ -72,6 +72,10 @@ div.wiki {
     &:last-child {
       @apply mbe-0;
     }
+
+    &:empty {
+      @apply hidden;
+    }
   }
 
   a {
@@ -85,4 +89,6 @@ div.wiki {
   ul li {
     @apply ps-0;
   }
+
+
 }

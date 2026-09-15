@@ -39,3 +39,7 @@ body.controller-my.action-page {
 
   }
 }
+
+.dragging > .block-receiver {
+  @apply min-h-10 bg-yellow-1;
+}

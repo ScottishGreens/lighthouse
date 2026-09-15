@@ -150,14 +150,14 @@
     @apply align-middle me-1;
   }
   label.block {
-    @apply block my-1 float-none;
+    @apply block my-1 mx-0 float-none;
   }
 }
 
 @utility admin-field {
   @apply ps-85 py-3 my-0 clear-both min-h-8 border-be-1 border-gray-1 overflow-hidden last:border-be-0 last:mbe-0;
   > label {
-    @apply float-start inline-82 mbs-1 -ms-85 me-2;
+    @apply float-start inline-auto mbs-1 -ms-85 me-2;
   }
   label.block {
     @apply block my-1 float-none mx-0 px-0 w-auto;
@@ -252,6 +252,10 @@ label.inline {
 
 label.block {
   @apply inline-block mbe-1;
+}
+
+label.floating {
+  @apply block mbe-1;
 }
 
 #top-menu {
@@ -406,6 +410,10 @@ fieldset {
     svg.icon-svg {
       @apply stroke-gray-6;
     }
+  }
+
+  legend + .contextual {
+    @apply -mbs-3;
   }
 
   &.collapsible > div {

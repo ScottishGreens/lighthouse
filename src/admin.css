@@ -11,7 +11,9 @@
   }
 }
 
+body.action-settings .tabular > p,
 .tabular.settings > p,
+.tabular.settings > .tab-content > p,
 .tabular.settings > .tab-content > fieldset > p {
   @apply admin-field;
 }
