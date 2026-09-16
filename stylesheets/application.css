@@ -506,6 +506,7 @@ label.floating {
   flex-grow: 3;
   padding-block-end: calc(var(--spacing) * 10);
   > h2 {
+    margin-inline-end: var(--spacing);
     display: inline-block;
   }
   > .contextual {
@@ -894,10 +895,12 @@ ul.cal {
   border-style: var(--tw-border-style);
   border-width: 0px;
   background-color: var(--color-gray-2);
-  padding-inline: var(--spacing);
+  padding-inline: calc(var(--spacing) * 1.5);
   padding-block: calc(var(--spacing) * 0.5);
   font-size: var(--text-sm);
   line-height: var(--tw-leading, var(--text-sm--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
 }
 .badge-status-open {
@@ -995,6 +998,13 @@ body.action-login #header {
   p, ul li {
     margin-block-end: var(--spacing);
   }
+  ul.queries {
+    > li {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing);
+    }
+  }
 }
 div.nosidebar #sidebar {
   width: 0px;
@@ -1003,8 +1013,8 @@ div.nosidebar #sidebar {
   display: none;
 }
 .icon, .icon-only {
-  display: inline-flex !important;
-  margin-top: 0 !important;
+  display: inline-flex;
+  margin-top: 0;
   align-items: center;
   vertical-align: middle;
 }
@@ -1105,6 +1115,7 @@ span.icon-checked:has(:not(a svg.icon-svg)) svg.icon-svg {
   border-radius: 4px;
   color: var(--oc-gray-9);
   z-index: 99;
+  width: fit-content;
 }
 .drdn.expanded .drdn-content {
   display: block;
@@ -1522,6 +1533,7 @@ body.controller-issues.action-show div.dynamicEditField {
   }
 }
 .journal {
+  position: relative;
   margin-block: calc(var(--spacing) * 4);
   .journal-info {
     color: var(--color-gray-6);
@@ -1554,15 +1566,22 @@ body.controller-issues.action-show div.dynamicEditField {
     }
   }
   ul.journal-details {
-    margin: 0px;
-    margin-block-end: var(--spacing);
+    margin-inline: 0px;
+    margin-block: var(--spacing);
+    > li {
+      margin-block-end: var(--spacing);
+    }
     > .wiki {
       margin-block-start: calc(var(--spacing) * 2);
     }
   }
   .journal-meta {
-    float: right;
-    display: none;
+    position: absolute;
+    top: calc(var(--spacing) * 4);
+    right: calc(var(--spacing) * 4);
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 2);
   }
   &:hover .journal-meta, .reaction-button-wrapper, .journal-actions {
     display: flex;
@@ -1592,8 +1611,17 @@ div.description, div.attributes {
   display: flex;
   align-items: center;
   gap: calc(var(--spacing) * 2);
-  .ticket_customer {
+  span.ticket_customer {
     flex-grow: 1;
+    text-wrap: wrap !important;
+    > a {
+      display: block;
+    }
+  }
+  span.helpdesk-message-date {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+    text-wrap: nowrap;
   }
 }
 #history {
@@ -1785,6 +1813,28 @@ input#issue_subject {
 p.nodata {
   color: var(--color-gray-6);
   font-style: italic;
+}
+#wrapper .helpdesk-ticket-to .icon-email-to {
+  text-wrap: nowrap;
+}
+#wrapper .helpdesk-ticket-to #customer_to_email > .contact {
+  display: block;
+}
+#wrapper .note-message-head {
+  margin-block: calc(var(--spacing) * 2);
+  border-radius: var(--radius-md);
+  border-style: var(--tw-border-style);
+  border-width: 0px;
+  background-color: var(--color-blue-1);
+  padding-inline: calc(var(--spacing) * 2);
+  padding-block: calc(var(--spacing) * 2);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  overflow: hidden;
+  > span.contact {
+    flex-grow: 1;
+  }
 }
 #wrapper table.excerpt.index {
   border-style: var(--tw-border-style);

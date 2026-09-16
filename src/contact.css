@@ -1,6 +1,23 @@
 
 #wrapper {
 
+  .helpdesk-ticket-to {
+    .icon-email-to {
+      @apply text-nowrap;
+    }
+    #customer_to_email > .contact {
+      @apply block;
+    }
+  }
+
+  .note-message-head {
+    @apply flex gap-2 items-center flatbox overflow-hidden;
+
+    > span.contact {
+      @apply grow-1;
+    }
+  }
+
   table.excerpt.index {
     @apply border-0;
   }

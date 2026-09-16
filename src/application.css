@@ -339,7 +339,7 @@ label.floating {
   @apply grow-3 pbe-10 w-fit min-w-0;
 
   > h2 {
-    @apply inline-block;
+    @apply inline-block me-1;
   }
 
   > .contextual {
@@ -616,7 +616,7 @@ ul.cal {
 }
 
 .badge {
-  @apply bg-gray-2 border-0 rounded-md py-0.5 px-1 text-sm uppercase;
+  @apply bg-gray-2 border-0 rounded-md py-0.5 px-1.5 text-sm font-medium uppercase;
 }
 
 .badge-status-open {

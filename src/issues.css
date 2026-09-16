@@ -79,7 +79,7 @@ body.controller-issues.action-show {
 
 
 .journal {
-  @apply my-4;
+  @apply my-4 relative;
 
   .journal-info {
     @apply text-gray-6;
@@ -112,7 +112,11 @@ body.controller-issues.action-show {
   }
 
   ul.journal-details {
-    @apply m-0 mbe-1;
+    @apply mx-0 my-1;
+
+    > li {
+      @apply mbe-1;
+    }
 
     > .wiki {
       @apply mbs-2;
@@ -120,7 +124,7 @@ body.controller-issues.action-show {
   }
 
   .journal-meta {
-    @apply hidden float-right;
+    @apply flex gap-2 items-center absolute top-4 right-4;
   }
 
   &:hover .journal-meta,
@@ -149,8 +153,15 @@ div.attributes {
 #ticket_data {
   @apply flatbox flex gap-2 items-center order-first;
 
-  .ticket_customer {
-      @apply grow-1;
+  span.ticket_customer {
+    @apply !text-wrap grow-1;
+    > a {
+      @apply block;
+    }
+  }
+
+  span.helpdesk-message-date {
+    @apply text-nowrap text-base;
   }
 
 }

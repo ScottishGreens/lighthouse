@@ -5,6 +5,13 @@
   ul li {
     @apply mbe-1;
   }
+
+  ul.queries {
+    > li {
+      @apply flex gap-1 items-center;
+    }
+  }
+
 }
 
 div.nosidebar #sidebar {

@@ -2,8 +2,8 @@
 
 /***** SVG Icons *****/
 .icon, .icon-only {
-  display: inline-flex !important;
-  margin-top: 0 !important;
+  display: inline-flex;
+  margin-top: 0;
   align-items: center;
   vertical-align: middle;
 }
