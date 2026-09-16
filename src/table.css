@@ -9,7 +9,7 @@ table.list {
   @apply box min-w-full border-separate;
 
   td,th {
-    @apply pe-2 ps-2 py-1 border-be-1 border-gray-1 text-left font-normal align-top;
+    @apply pe-4 ps-2 py-1 border-be-1 border-gray-1 text-left font-normal align-top;
     &:first-child {
       @apply ps-0;
     }
@@ -57,17 +57,28 @@ table.list {
     @apply hidden;
   }
 
+  /*
   .status,
-  .priority {
-    @apply text-center;
-  }
+  .status > a,
+  .priority,
+  .priority > a {
+    @apply text-center justify-center;
+  } */
 
   td.buttons {
     @apply text-right;
   }
+
   .author, .assigned_to {
-    @apply min-w-40;
+    @apply w-min;
   }
+
+  &.issues {
+    .author, .assigned_to {
+      @apply min-w-40;
+    }
+  }
+
 
   .created_on, .due_date,
   .status, .project, .updated_on,.priority {

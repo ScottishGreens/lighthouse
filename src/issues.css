@@ -2,6 +2,16 @@
 #sticky-issue-header {
   @apply hidden;
 }
+
+#new-object {
+    @apply px-1.5 rounded-md;
+
+    &:hover {
+      @apply bg-blue-1;
+    }
+
+}
+
 body.controller-issues.action-show {
 
   /*
@@ -155,9 +165,6 @@ div.attributes {
 
   span.ticket_customer {
     @apply !text-wrap grow-1;
-    > a {
-      @apply block;
-    }
   }
 
   span.helpdesk-message-date {
