@@ -10,8 +10,20 @@
     }
   }
 
+  span.helpdesk-message-date {
+    @apply text-gray-9 text-base text-nowrap;
+  }
+
   .note-message-head {
-    @apply flex gap-2 items-center flatbox overflow-hidden;
+    @apply flex text-gray-9 gap-2 items-center flatbox overflow-hidden;
+
+    .icon-email {
+      @apply text-nowrap;
+    }
+
+    a {
+      @apply text-gray-9;
+    }
 
     > span.contact {
       @apply grow-1;

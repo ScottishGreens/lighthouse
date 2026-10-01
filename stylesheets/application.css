@@ -37,7 +37,7 @@
     --color-primary-light: var(--color-blue-5);
     --color-surface: var(--color-page-tint);
     --color-border: var(--color-gray-3);
-    --color-text: var(--oc-gray-7);
+    --color-text: var(--oc-gray-9);
     --color-link: var(--color-primary);
     --color-link-hover: var(--color-primary-light);
     --color-page-tint: #fefefe;
@@ -46,6 +46,7 @@
     --color-gray-3: hsl(48 6% 85%);
     --color-gray-4: hsl(48 6% 75%);
     --color-gray-6: hsl(48 6% 55%);
+    --color-gray-7: hsl(48 6% 45%);
     --color-gray-8: hsl(48 6% 35%);
     --color-gray-9: hsl(48 6% 25%);
     --color-gray-vlight: var(--color-gray-1);
@@ -235,7 +236,7 @@ body {
 html, body, table, input {
   font-size: var(--text-base);
   line-height: var(--tw-leading, var(--text-base--line-height));
-  color: var(--color-gray-8);
+  color: var(--color-text);
 }
 a {
   --tw-font-weight: var(--font-weight-normal);
@@ -1343,6 +1344,10 @@ span[role="img"].avatar.s50 {
   background-color: var(--oc-pink-5);
   color: var(--oc-white);
 }
+img.filecontent, video.filecontent {
+  height: 100%;
+  width: auto;
+}
 .list.plugins span.name {
   display: block;
   --tw-font-weight: var(--font-weight-bold);
@@ -1530,22 +1535,23 @@ body.controller-issues.action-show div.dynamicEditField {
   }
 }
 .thumbnails {
+  margin-block: calc(var(--spacing) * 3);
   display: flex;
   gap: var(--spacing);
 }
 .author {
-  color: var(--color-gray-6);
+  color: var(--color-gray-7);
   a {
-    color: var(--color-gray-6);
+    color: var(--color-gray-7);
   }
 }
 .journal {
   position: relative;
   margin-block: calc(var(--spacing) * 4);
   .journal-info {
-    color: var(--color-gray-6);
+    color: var(--color-gray-7);
     a {
-      color: var(--color-gray-6);
+      color: var(--color-gray-7);
     }
   }
   &.has-details:not(.has-notes) {
@@ -1830,6 +1836,12 @@ p.nodata {
 #wrapper .helpdesk-ticket-to #customer_to_email > .contact {
   display: block;
 }
+#wrapper span.helpdesk-message-date {
+  font-size: var(--text-base);
+  line-height: var(--tw-leading, var(--text-base--line-height));
+  text-wrap: nowrap;
+  color: var(--color-gray-9);
+}
 #wrapper .note-message-head {
   margin-block: calc(var(--spacing) * 2);
   border-radius: var(--radius-md);
@@ -1842,6 +1854,13 @@ p.nodata {
   align-items: center;
   gap: calc(var(--spacing) * 2);
   overflow: hidden;
+  color: var(--color-gray-9);
+  .icon-email {
+    text-wrap: nowrap;
+  }
+  a {
+    color: var(--color-gray-9);
+  }
   > span.contact {
     flex-grow: 1;
   }

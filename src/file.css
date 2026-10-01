@@ -1,0 +1,3 @@
+img.filecontent, video.filecontent {
+  @apply h-full w-auto;
+}

@@ -30,7 +30,7 @@
 
   --color-white: var(--color-page-tint);
 
-  --color-text: var(--oc-gray-7);
+  --color-text: var(--oc-gray-9);
   --color-link: var(--color-primary);
   --color-link-hover: var(--color-primary-light);
 
@@ -176,7 +176,7 @@ body {
 }
 
 html, body, table, input {
-  @apply text-gray-8 text-base;
+  @apply text-text text-base;
 }
 
 a {
@@ -695,6 +695,7 @@ table.list.issues > tbody > tr.issue > td.selected {
 @import "./icons.css";
 @import "./dropdown.css";
 @import "./avatars.css";
+@import "./file.css";
 @import "./admin.css";
 @import "./filter.css";
 @import "./issues.css";
