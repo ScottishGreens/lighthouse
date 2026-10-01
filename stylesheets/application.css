@@ -2036,13 +2036,19 @@ div.wiki a {
   }
   text-decoration-line: underline;
 }
-div.wiki ul {
-  margin-block: calc(var(--spacing) * 4);
-  list-style-type: disc;
+div.wiki ul, div.wiki  ol {
+  margin-block: calc(var(--spacing) * 3);
   padding-inline-start: calc(var(--spacing) * 6);
 }
-div.wiki ul li {
+div.wiki ol {
+  list-style-type: decimal;
+}
+div.wiki ul {
+  list-style-type: disc;
+}
+div.wiki li {
   padding-inline-start: 0px;
+  padding-block-end: var(--spacing);
 }
 :is(body.controller-welcome.action-index, body.controller-my.action-page) #header h1, :is(body.controller-welcome.action-index, body.controller-my.action-page)  #sidebar {
   display: none;

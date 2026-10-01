@@ -82,12 +82,18 @@ div.wiki {
     @apply wiki-link underline;
   }
 
+  ul, ol {
+    @apply my-3 ps-6;
+  }
+  ol {
+    @apply list-decimal;
+  }
   ul {
-    @apply my-4 list-disc ps-6;
+    @apply list-disc;
   }
 
-  ul li {
-    @apply ps-0;
+  li {
+    @apply ps-0 pbe-1;
   }
 
 
