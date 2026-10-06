@@ -96,5 +96,8 @@ div.wiki {
     @apply ps-0 pbe-1;
   }
 
+  blockquote {
+    @apply border-l-1 border-gray-3 ps-4 my-3;
+  }
 
 }

@@ -2050,6 +2050,13 @@ div.wiki li {
   padding-inline-start: 0px;
   padding-block-end: var(--spacing);
 }
+div.wiki blockquote {
+  margin-block: calc(var(--spacing) * 3);
+  border-left-style: var(--tw-border-style);
+  border-left-width: 1px;
+  border-color: var(--color-gray-3);
+  padding-inline-start: calc(var(--spacing) * 4);
+}
 :is(body.controller-welcome.action-index, body.controller-my.action-page) #header h1, :is(body.controller-welcome.action-index, body.controller-my.action-page)  #sidebar {
   display: none;
 }
