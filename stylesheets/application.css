@@ -52,6 +52,7 @@
     --color-gray-vlight: var(--color-gray-1);
     --color-gray-dark: var(--color-gray-8);
     --color-yellow-1: var(--oc-yellow-1);
+    --color-yellow-8: var(--oc-yellow-8);
     --color-blue-1: #eaf6ff;
     --color-blue-5: var(--oc-blue-5);
     --color-blue-7: var(--oc-blue-7);
@@ -691,13 +692,6 @@ fieldset {
   margin-block-end: calc(var(--spacing) * 2);
 }
 .autoscroll {
-  margin-block: calc(var(--spacing) * 4);
-  border-radius: var(--radius-lg);
-  border-style: var(--tw-border-style);
-  border-width: 1px;
-  border-color: var(--color-gray-3);
-  background-color: var(--color-page-tint);
-  padding: calc(var(--spacing) * 4);
   table.list,
   .box {
     margin-block-end: calc(var(--spacing) * 4);
@@ -708,24 +702,6 @@ fieldset {
       margin-block-end: 0px;
     }
   }
-  overflow-x: auto;
-}
-div.flash.notice {
-  display: flex;
-  align-items: center;
-  gap: calc(var(--spacing) * 2);
-  border-radius: var(--radius-md);
-  border-style: var(--tw-border-style);
-  border-width: 1px;
-  border-color: var(--color-green-8);
-  background-color: var(--color-green-1);
-  padding: calc(var(--spacing) * 2);
-  color: var(--color-green-8);
-  svg.icon-svg {
-    stroke: var(--color-green-8);
-  }
-}
-.autoscroll {
   margin-block: calc(var(--spacing) * 4);
   border-radius: var(--radius-lg);
   border-style: var(--tw-border-style);
@@ -1794,6 +1770,34 @@ input#issue_subject {
 .jstTabs.tabs .jstElements > button {
   border-color: var(--color-gray-6);
   vertical-align: middle;
+}
+div.flash {
+  margin-block: calc(var(--spacing) * 2);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  border-radius: var(--radius-md);
+  border-style: var(--tw-border-style);
+  border-width: 0px;
+  padding: calc(var(--spacing) * 2);
+  &.notice {
+    background-color: var(--color-green-1);
+    svg.icon-svg {
+      stroke: var(--color-green-8);
+    }
+  }
+  &.warning {
+    background-color: var(--color-yellow-1);
+    svg.icon-svg {
+      stroke: var(--color-yellow-8);
+    }
+  }
+}
+.conflict {
+  margin-block: calc(var(--spacing) * 2);
+  border-radius: var(--radius-md);
+  background-color: var(--color-red-1);
+  padding: calc(var(--spacing) * 2);
 }
 #activity dl {
   margin-block: calc(var(--spacing) * 2);

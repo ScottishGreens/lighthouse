@@ -447,14 +447,6 @@ fieldset {
   @apply box overflow-x-auto;
 }
 
-div.flash.notice {
-  @apply flex items-center gap-2 p-2 bg-green-1 border-1 border-green-8 text-green-8 rounded-md;
-
-  svg.icon-svg {
-    @apply stroke-green-8;
-  }
-}
-
 .autoscroll {
   @apply box overflow-x-auto;
   > table.list {

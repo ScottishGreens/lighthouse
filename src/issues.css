@@ -333,3 +333,25 @@ input#issue_subject {
     @apply border-gray-6 align-middle;
   }
 }
+
+div.flash {
+  @apply flex items-center gap-2 p-2 my-2 border-0 rounded-md;
+
+  &.notice {
+    @apply bg-green-1;
+    svg.icon-svg {
+      @apply stroke-green-8;
+    }
+  }
+  &.warning {
+    @apply bg-yellow-1;
+    svg.icon-svg {
+      @apply stroke-yellow-8;
+    }
+  }
+
+}
+
+.conflict {
+  @apply p-2 my-2 bg-red-1 rounded-md;
+}
