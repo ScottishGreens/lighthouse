@@ -255,6 +255,11 @@ a {
     }
   }
 }
+a.group {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+}
 h1 {
   font-size: var(--text-base);
   line-height: var(--tw-leading, var(--text-base--line-height));
@@ -406,7 +411,7 @@ label.floating {
   padding-block: var(--spacing);
   color: var(--color-text);
   @media (width >= 80rem) {
-    padding-inline: calc(var(--spacing) * 30);
+    padding-inline: calc(var(--spacing) * 24);
   }
   #project-jump .drdn-trigger,
   input {
@@ -494,7 +499,7 @@ label.floating {
   #header,
 #main,
 #footer {
-    margin-inline: calc(var(--spacing) * 30);
+    margin-inline: calc(var(--spacing) * 24);
   }
 }
 #main {
@@ -970,7 +975,7 @@ body.action-login #header {
   }
 }
 #sidebar #sidebar-wrapper {
-  width: calc(var(--spacing) * 80);
+  width: calc(var(--spacing) * 90);
   flex-grow: 0;
   p, ul li {
     margin-block-end: var(--spacing);
@@ -1446,7 +1451,7 @@ div.ui-widget-overlay {
   }
 }
 body.controller-issues.action-show #main {
-  max-width: calc(var(--spacing) * 300);
+  max-width: calc(var(--spacing) * 310);
 }
 body.controller-issues.action-show .refreshData {
   display: none;
@@ -1590,7 +1595,7 @@ div.description, div.attributes {
 }
 #ticket_data {
   order: -9999;
-  margin-block: calc(var(--spacing) * 2);
+  margin-block-end: calc(var(--spacing) * 2);
   border-radius: var(--radius-md);
   border-style: var(--tw-border-style);
   border-width: 0px;
@@ -1736,21 +1741,10 @@ form#issue-form {
 #update {
   margin-block-end: calc(var(--spacing) * 6);
 }
-.notes_with-send {
-  border-radius: var(--radius-md);
-  padding-inline: calc(var(--spacing) * 4);
-  padding-block-end: calc(var(--spacing) * 4);
-  .helpdesk-ticket-to {
-    display: flex;
-    align-items: center;
-    gap: calc(var(--spacing) * 3);
-  }
-}
 .email-header, .email-footer {
-  text-align: center;
-  font-style: italic;
+  display: none;
 }
-#issue_description_wiki {
+.notes_with-send .email-template #issue_description_wiki {
   padding-inline-start: 0px;
   p {
     padding-inline-start: 0px;
@@ -1834,11 +1828,26 @@ p.nodata {
   color: var(--color-gray-6);
   font-style: italic;
 }
-#wrapper .helpdesk-ticket-to .icon-email-to {
-  text-wrap: nowrap;
+#wrapper .notes_with-send {
+  border-radius: var(--radius-md);
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block-end: calc(var(--spacing) * 4);
 }
-#wrapper .helpdesk-ticket-to #customer_to_email > .contact {
-  display: block;
+#wrapper #journal_contacts {
+  display: flex;
+  gap: var(--spacing);
+}
+#wrapper .helpdesk-ticket-to {
+  margin-block: calc(var(--spacing) * 3);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  .icon-email-to {
+    text-wrap: nowrap;
+  }
+  #customer_to_email > .contact {
+    display: block;
+  }
 }
 #wrapper span.helpdesk-message-date {
   font-size: var(--text-base);
@@ -1847,7 +1856,7 @@ p.nodata {
   color: var(--color-gray-9);
 }
 #wrapper .note-message-head {
-  margin-block: calc(var(--spacing) * 2);
+  margin-block-end: calc(var(--spacing) * 2);
   border-radius: var(--radius-md);
   border-style: var(--tw-border-style);
   border-width: 0px;
@@ -1874,7 +1883,7 @@ p.nodata {
   border-width: 0px;
 }
 #wrapper form.new_issue .email-template {
-  margin-block: calc(var(--spacing) * 2);
+  margin-block-end: calc(var(--spacing) * 2);
   border-radius: var(--radius-md);
   border-style: var(--tw-border-style);
   border-width: 0px;
@@ -1884,7 +1893,7 @@ p.nodata {
   overflow: hidden;
 }
 #wrapper div.contact {
-  margin-block: calc(var(--spacing) * 2);
+  margin-block-end: calc(var(--spacing) * 2);
   border-radius: var(--radius-md);
   border-style: var(--tw-border-style);
   border-width: 0px;
@@ -2369,7 +2378,7 @@ body.controller-agile_boards.action-index #sidebar-wrapper h3:first-child, body.
     padding-block-end: calc(var(--spacing) * 70);
   }
   .issue-card {
-    margin-block: calc(var(--spacing) * 2);
+    margin-block-end: calc(var(--spacing) * 2);
     border-radius: var(--radius-md);
     border-style: var(--tw-border-style);
     border-width: 0px;

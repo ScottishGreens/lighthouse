@@ -137,7 +137,7 @@
 }
 
 @utility flatbox {
-  @apply my-2 py-2 px-2 bg-blue-1 border-0 rounded-md;
+  @apply mbe-2 py-2 px-2 bg-blue-1 border-0 rounded-md;
 }
 
 @utility field {
@@ -181,6 +181,10 @@ html, body, table, input {
 
 a {
   @apply primary-link;
+}
+
+a.group {
+  @apply flex items-center gap-1;
 }
 
 h1 {
@@ -264,7 +268,7 @@ label.floating {
   --color-link-hover: var(--color-white);
   --color-border: transparent;
   --color-surface: var(--color-blue-7);
-  @apply flex border-be-1 bg-surface border-border text-text gap-2 items-center py-1 px-10 xl:px-30;
+  @apply flex border-be-1 bg-surface border-border text-text gap-2 items-center py-1 px-10 xl:px-24;
 
   #project-jump .drdn-trigger,
   input {
@@ -328,7 +332,7 @@ label.floating {
 #header,
 #main,
 #footer {
-  @apply lg:mx-14 xl:mx-30;
+  @apply lg:mx-14 xl:mx-24;
 }
 
 #main {

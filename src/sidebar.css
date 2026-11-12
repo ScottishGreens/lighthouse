@@ -1,6 +1,6 @@
 
 #sidebar #sidebar-wrapper {
-  @apply w-80 grow-0;
+  @apply w-90 grow-0;
   p,
   ul li {
     @apply mbe-1;

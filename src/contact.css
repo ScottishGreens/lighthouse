@@ -1,7 +1,16 @@
 
 #wrapper {
 
+  .notes_with-send {
+    @apply pbe-4 px-4 rounded-md;
+  }
+
+  #journal_contacts {
+    @apply flex gap-1;
+  }
+
   .helpdesk-ticket-to {
+    @apply flex my-3 gap-3 items-center;
     .icon-email-to {
       @apply text-nowrap;
     }
@@ -9,6 +18,7 @@
       @apply block;
     }
   }
+
 
   span.helpdesk-message-date {
     @apply text-gray-9 text-base text-nowrap;
